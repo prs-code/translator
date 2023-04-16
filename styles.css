@@ -1,0 +1,47 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+@font-face {
+    font-family: Vazir;
+    src: url('./fonts/Vazir.eot') format('eot'), 
+    url('./fonts/Vazir.woff2') format('woff2'), 
+    url('./fonts/Vazir.woff') format('woff'), 
+    url('./fonts/Vazir.ttf') format('truetype');
+}
+
+
+body{
+    font-family: Vazir, Arial, sans-serif;
+    font-weight:normal;
+    direction: rtl;
+    background-color: #F6F1F1;
+}
+
+.area-container {
+    margin: 10px 20px;
+}
+
+.translate-btn{
+    margin-top: 10px;
+    width: 100%;
+}
+
+.val-container {
+    display: flex;
+    justify-content: space-evenly;
+    text-align: left;
+    border-bottom: 2px solid #454545;
+    padding: 0 15px;
+}
+
+.val-container .inputBox {
+    width: 50%;
+    margin: 20px 40px;
+}
+
+#inputAddress,
+.chbx {
+    margin: 20px;
+}

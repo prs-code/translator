@@ -1,28 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <title>Document</title>
-    <style>
-
-        .container label{
-            display: block;
-        }
-
-    </style>
 </head>
 <body>
-    <textarea rows="8" cols="150" placeholder="متن فارسی را وارد کنید .></textarea>
-    <div class="container">
-        <label>مربوط به تابع js</label>
-        <input type="text" id="jsTranslate"/>
+    <div class="area-container">
+        <label for="exampleFormControlTextarea1" class="form-label">متن فارسی را وارد کنید</label>
+        <textarea class="form-control" id="Textarea1" rows="3"></textarea>
+        <button type="button" class="btn btn-primary translate-btn">ترجمه</button>
     </div>
-    <div class="container">
-        <label>مروبط به تابع cshtml</label>
-        <input type="text" id="htmlTranslate"/>
+
+    <div class="val-container">
+        <div class="input-group mb-3 inputBox">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon3">Value</span>
+            </div>
+            <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+        </div>
+    
+        <div class="input-group mb-3 inputBox">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon3">Key</span>
+            </div>
+            <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+        </div>
     </div>
+
+    <div>
+        <div class="form-group" id="inputAddress">
+            <label for="inputAddress">تابع مربوط به js</label>
+            <div style="display: flex;">
+                <input type="text" class="form-control" id="inpt-js">
+                <button type="button" onClick="jsCopy(this)" class="btn btn-info" id="copy-js">کپی</button>
+            </div>
+        </div>
+
+        <div class="form-group" id="inputAddress">
+            <label for="inputAddress">تابع مربوط به cshtml</label>
+            <div style="display: flex;">
+                <input type="text" class="form-control" id="inpt-cshtml">
+                <button type="button" onClick="csCopy(this)" class="btn btn-info" id="copy-cs">کپی</button>
+            </div>
+            <div class="form-group row">
+                <div class="col s9 chbx">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" onClick="changeHandler(this)" id="gridCheck1">
+                    <label class="form-check-label" for="gridCheck1">
+                      اسنفاده از @
+                    </label>
+                  </div>
+                </div>
+              </div>
+        </div>
+    </div>
+
+
+
+
+
 
     <script src="./js.js"></script>
 </body>

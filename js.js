@@ -21,7 +21,7 @@ const array = [
 ];
 
 
-const toUpperLetters = function (arr) {
+const toUpperLetters = function (arr) {// تبدیل آرایه به رشته
     arr.map((str, index) => {
         const firstLetter = str.charAt(0).toLocaleUpperCase(); 
         const anotherLetter = str.slice(1);
@@ -35,6 +35,24 @@ const toUpperLetters = function (arr) {
 
 const res = toUpperLetters(array);
 
+//جای گذاری رشته کلید در توابع
+const js = document.getElementById('inpt-js');
+js.value = `translate(${res})`;
 
 
-// @BPMS.LanguageResources.LanguageService.GetTranslate("Value") 
+const cshtml = document.getElementById('inpt-cshtml');
+//چک باکس مربوط به @
+function changeHandler(e) {
+    (e.checked ? 
+        cshtml.value = `@BPMS.LanguageResources.LanguageService.GetTranslate(${res})` : 
+        cshtml.value = `BPMS.LanguageResources.LanguageService.GetTranslate(${res})`)
+};
+
+//کپی داخل کلیپ بورد
+function jsCopy(e) {
+    navigator.clipboard.writeText(js.value);
+};
+
+function csCopy(e) {
+    navigator.clipboard.writeText(cshtml.value);
+};
