@@ -92,9 +92,4 @@ $('#translate-btn').on('click',async () => {
     const keyValue = await convertStringToArr($('#persianTextarea').val());
     const res = toUpperLetters(keyValue)
     InsertTextToMethod(res)
-
-    debugger
-
-
-   
 });
