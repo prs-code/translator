@@ -1,20 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital@0;1&display=swap');
+
+@font-face {
+    font-family: "IRANSans";
+    src:  
+        url('./fonts/Woff2/IRANSansXFaNum-Medium.woff2') format('woff2'), 
+        url('./fonts/Woff/IRANSansXFaNum-Medium.woff') format('woff')
+}
+
+
 * {
     padding: 0;
     margin: 0;
 }
 
-@font-face {
-    font-family: Vazir;
-    src: url('./fonts/Vazir.eot') format('eot'), 
-    url('./fonts/Vazir.woff2') format('woff2'), 
-    url('./fonts/Vazir.woff') format('woff'), 
-    url('./fonts/Vazir.ttf') format('truetype');
-}
-
-
-body{
-    font-family: Vazir, Arial, sans-serif;
-    font-weight:normal;
+body {
     direction: rtl;
     background-color: #F6F1F1;
 }
@@ -22,6 +21,34 @@ body{
 input {
     direction: ltr !important;
     text-align: left !important;
+}
+label, span {
+    font-family: "IRANSans", Arial, sans-serif;
+    font-size: 2rem;
+}
+
+body textarea {
+    font-family: 'Rubik', sans-serif;
+    font-size: 1.4rem !important;
+    font-weight: 600;    
+}
+
+body input {
+    font-family: 'Rubik', sans-serif;
+    font-size: 1.6rem !important;
+    font-weight: 600;
+    height: 43px !important;
+}
+
+.form-check-input {
+    width: 20px !important;
+    height: 20px !important;
+}
+
+.btn {
+    font-family: "IRANSans", Arial, sans-serif;
+    font-size: 1.6rem !important;
+    font-weight: 600 !important;
 }
 
 .area-container {
