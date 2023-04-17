@@ -13,29 +13,29 @@
 <body>
     <div class="area-container">
         <label for="exampleFormControlTextarea1" class="form-label">متن فارسی را وارد کنید</label>
-        <textarea class="form-control" id="Textarea1" rows="3"></textarea>
-        <button type="button" class="btn btn-primary translate-btn">ترجمه</button>
+        <textarea class="form-control" id="persianTextarea" rows="3"></textarea>
+        <button id="translate-btn" type="button" class="btn btn-primary translate-btn">ترجمه</button>
     </div>
 
     <div class="val-container">
         <div class="input-group mb-3 inputBox">
             <div class="input-group-prepend">
-              <span class="input-group-text" id="basic-addon3">Value</span>
+              <span class="input-group-text" id="basic-addon3">ترجمه خام</span>
             </div>
-            <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+            <input id="RawTranslation" type="text" class="form-control" aria-describedby="basic-addon3">
         </div>
     
         <div class="input-group mb-3 inputBox">
             <div class="input-group-prepend">
-              <span class="input-group-text" id="basic-addon3">Key</span>
+              <span class="input-group-text" id="basic-addon3">کلید ترجمه شده</span>
             </div>
-            <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+            <input id="TranslatedKey" type="text" class="form-control" aria-describedby="basic-addon3">
         </div>
     </div>
 
     <div>
         <div class="form-group" id="inputAddress">
-            <label for="inputAddress">تابع مربوط به js</label>
+            <label for="inputAddress">تابع ترجمه جاوااسکریپت</label>
             <div style="display: flex;">
                 <input type="text" class="form-control" id="inpt-js">
                 <button type="button" onClick="jsCopy(this)" class="btn btn-info" id="copy-js">کپی</button>
@@ -43,7 +43,7 @@
         </div>
 
         <div class="form-group" id="inputAddress">
-            <label for="inputAddress">تابع مربوط به cshtml</label>
+            <label for="inputAddress">تابع ترجمه cthml</label>
             <div style="display: flex;">
                 <input type="text" class="form-control" id="inpt-cshtml">
                 <button type="button" onClick="csCopy(this)" class="btn btn-info" id="copy-cs">کپی</button>
@@ -66,6 +66,6 @@
 
 
 
-    <script src="./js.js"></script>
+    <script src="./index.js" defer></script>
 </body>
 </html>

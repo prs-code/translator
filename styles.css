@@ -45,3 +45,7 @@ body{
 .chbx {
     margin: 20px;
 }
+
+textarea {
+    width: 100%;
+}
