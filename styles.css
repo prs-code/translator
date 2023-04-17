@@ -19,6 +19,11 @@ body{
     background-color: #F6F1F1;
 }
 
+input {
+    direction: ltr !important;
+    text-align: left !important;
+}
+
 .area-container {
     margin: 10px 20px;
 }

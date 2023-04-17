@@ -1,6 +1,9 @@
 // Selected html tags
 const raw_translation_input = $("#RawTranslation")
 const translated_key_input = $("#TranslatedKey")
+const inJsMethod_input = $("#inpt-js")
+const inChtmlMethod_input = $("#inpt-cshtml")
+const checkBox_Chtml_with_addsign = $("#gridCheck1")
 
 // #region functions and methods
 const translate = async (txt) => {
@@ -52,29 +55,32 @@ const toUpperLetters = function (arr) {
     return arrayTostr.replaceAll(',', '');
 };
 
-const InsertTextToMethod = function() {
+const chtmlChangeHandler = (key) => {
+    checkBox_Chtml_with_addsign.is(":checked") ?
+        (inChtmlMethod_input.val(`@BPMS.LanguageResources.LanguageService.GetTranslate("${key}")`))
+        :
+        (inChtmlMethod_input.val(`BPMS.LanguageResources.LanguageService.GetTranslate("${key}")`));
+}
+
+const InsertTextToMethod = function(res) {
     
-    //جای گذاری رشته کلید در توابع
-    const js = document.getElementById('inpt-js');
-    js.value = `translate("${res}")`;
+    // جای گذاری در متد جاوااسکریپت 
+    inJsMethod_input.val(`translate("${res}")`) 
 
-
-    const cshtml = document.getElementById('inpt-cshtml');
-    //چک باکس مربوط به @
-    function changeHandler(e) {
-        e.checked
-            ? (cshtml.value = `@BPMS.LanguageResources.LanguageService.GetTranslate("${res}")`)
-            : (cshtml.value = `BPMS.LanguageResources.LanguageService.GetTranslate("${res}")`);
-    }
+    // جای گذاری در متد chtml 
+    chtmlChangeHandler(res)
+    checkBox_Chtml_with_addsign.on('click',()=>{
+        chtmlChangeHandler(res)
+    })
 }
 
 //کپی داخل کلیپ بورد
 function jsCopy(e) {
-    navigator.clipboard.writeText(js.value);
+    navigator.clipboard.writeText(inJsMethod_input.val());
 }
 
 function csCopy(e) {
-    navigator.clipboard.writeText(cshtml.value);
+    navigator.clipboard.writeText(inChtmlMethod_input.val());
 }
 // #endregion
 
@@ -85,7 +91,7 @@ $('#translate-btn').on('click',async () => {
     }
     const keyValue = await convertStringToArr($('#persianTextarea').val());
     const res = toUpperLetters(keyValue)
-
+    InsertTextToMethod(res)
 
     debugger
 
