@@ -21,6 +21,7 @@ body {
 input {
     direction: ltr !important;
     text-align: left !important;
+    font-size: 2rem !important;
 }
 label, span {
     font-family: "IRANSans", Arial, sans-serif;
@@ -35,7 +36,6 @@ body textarea {
 
 body input {
     font-family: 'Rubik', sans-serif;
-    font-size: 1.6rem !important;
     font-weight: 600;
     height: 43px !important;
 }
@@ -49,6 +49,7 @@ body input {
     font-family: "IRANSans", Arial, sans-serif;
     font-size: 1.6rem !important;
     font-weight: 600 !important;
+    width: 200px;
 }
 
 .area-container {
@@ -69,7 +70,7 @@ body input {
 }
 
 .val-container .inputBox {
-    width: 50%;
+    width: 100%;
     margin: 20px 40px;
 }
 

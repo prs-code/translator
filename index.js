@@ -38,18 +38,23 @@ const convertStringToArr = async (pureString) => {
 };
 
 const toUpperLetters = function (arr) {
+    const newArr = [];
+
     if(!Array.isArray(arr)) {
         alert('ورودی تابع کلید ساز آرایه نیست لطفا بررسی شود')
         return false
     }
     // تبدیل آرایه به رشته
-    arr.map((str, index) => {
-        const firstLetter = str.charAt(0).toLocaleUpperCase();
-        const anotherLetter = str.slice(1);
-        arr[index] = firstLetter + anotherLetter;
+    arr.map(str => {
+        if (str.length > 3) {
+            const firstLetter = str.charAt(0).toLocaleUpperCase();
+            const anotherLetter = str.slice(1);
+            const newItem = firstLetter + anotherLetter;
+            newArr.push(newItem);
+        }
+        
     });
-
-    const arrayTostr = arr.splice(0, 5).toString();
+    const arrayTostr = newArr.splice(0, 5).toString();
 
     translated_key_input.val(arrayTostr.replaceAll(',', ''))
     return arrayTostr.replaceAll(',', '');
@@ -77,10 +82,12 @@ const InsertTextToMethod = function(res) {
 //کپی داخل کلیپ بورد
 function jsCopy(e) {
     navigator.clipboard.writeText(inJsMethod_input.val());
+    $('#persianTextarea').val(null);
 }
 
 function csCopy(e) {
     navigator.clipboard.writeText(inChtmlMethod_input.val());
+    $('#persianTextarea').val(null);
 }
 // #endregion
 
